@@ -1,0 +1,66 @@
+--SCRIPT- Criação de Estrutura BD HELPET
+
+CREATE TABLE public."usuario" (
+	"Id_usuario" int8 NULL,
+	"Nome" text NULL,
+	"CPF" text NULL,
+	"Email" text NULL,
+	"Token" text NULL,
+	"Celular" text NULL,
+	"Id_Endereco" int8 NULL,
+	"Tipo_usuario" int8 NULL,
+);
+
+CREATE TABLE public."Endereco" (
+	"Id_Endereco" int8 NULL,
+	"Cidade" text NULL,
+	"Rua" text NULL,
+	"Bairro" text NULL,
+	"UF" text NULL,
+	"Complemento" text NULL,
+	"CEP" text NULL, 
+	"Numero" int8 NULL,
+	"Id_usuario" int8 NULL
+);
+
+CREATE TABLE public."MapTag" (
+	"Id_maptag" int8 NULL,
+	"Latitude" text NULL,
+	"Longitude" text NULL,
+	"Tipo" int8 NULL,
+	"Id_usuario" int8 NULL
+);
+
+CREATE TABLE public."mensagens" (
+	"Id_mensagem" int8 NULL,
+	"Remetente" text NULL,
+	"Destinatario" text NULL,
+	"Conteudo" text NULL,
+	"DataHora" timestamp NULL,
+	"Id_usuario" int8 NULL
+);
+
+CREATE TABLE public."Images" (
+	"Id_imagem" int8 NULL,
+	"CaminhoIMG" text NULL,
+	"Id_usuario" int8 NULL,
+	"Id_maptag" int8 NULL
+);
+
+CREATE TABLE public."Animal" (
+	"Id_animal" int8 NULL,
+	"Descricao" text NULL,
+	"Porte" text NULL,
+	"Pelagem" text NULL,
+	"Idade" text NULL,
+	"Tipo" text NULL,
+	"Id_Raca" int8 NULL, 
+	"Id_usuario" int8 NULL
+);
+
+CREATE TABLE public."Raca" (
+	"Id_raca" int8 NULL,
+	"Nome_raca" text NULL,
+	);
+
+
